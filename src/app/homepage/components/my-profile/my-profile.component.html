@@ -1,0 +1,23 @@
+<div class="row">
+    <form [formGroup]="myProfile" class="container">
+        <div class="myProfile"><h3>My Profile</h3></div>
+        <div class="image" *ngIf="imageUpload==null"><img  src="{{userDetails.imageUrl}}" alt=""></div>
+        <div class="image" *ngIf="imageUpload!=null"><img  src="{{imageUpload}}" alt=""></div>
+        <div class="uploadImage" *ngIf="uploadDetails"><input class="imageInput" type="file" accept="image/png, image/jpg, image/jpeg" (change)="previewFile($event)"></div>
+        <div class="inputField"><Label>First Name</Label><div><input formControlName="firstName" type="text" value="{{userDetails.firstName.trim()}}"></div></div>
+        <small class="text-danger" *ngIf="myProfile.get('firstName')?.errors?.['required'] && (myProfile.get('firstName')?.touched)">Required</small>
+        <small class="text-danger" *ngIf="myProfile.get('firstName')?.errors?.['WhiteSpace'] && (myProfile.get('firstName')?.touched)">First Name can't be empty</small>
+        <small class="text-danger" *ngIf="myProfile.get('firstName')?.errors?.['pattern'] && (myProfile.get('firstName')?.touched)">Invalid First Name</small>
+        <small class="text-danger" *ngIf="myProfile.get('firstName')?.errors?.['maxlength'] && (myProfile.get('firstName')?.touched)">First Name can't be more than 25 characters</small>
+        <div class="inputField"><Label>Last Name</Label><div><input formControlName="lastName" type="text" value="{{userDetails.lastName.trim()}}"></div></div>
+        <small class="text-danger" *ngIf="myProfile.get('lastName')?.errors?.['required'] && (myProfile.get('lastName')?.touched)">Required</small>
+        <small class="text-danger" *ngIf="myProfile.get('lastName')?.errors?.['WhiteSpace'] && (myProfile.get('lastName')?.touched)">Last Name can't be empty</small>
+        <small class="text-danger" *ngIf="myProfile.get('lastName')?.errors?.['pattern'] && (myProfile.get('lastName')?.touched)">Invalid Last Name</small>
+        <small class="text-danger" *ngIf="myProfile.get('lastName')?.errors?.['maxlength'] && (myProfile.get('lastName')?.touched)">Last Name can't be more than 25 characters</small>
+        <div class="inputField"><Label>Phone Number</Label><div><input formControlName="phoneNumber" type="text" value="{{userDetails.phoneNumber}}"></div></div>
+        <small class="text-danger" *ngIf="myProfile.get('phoneNumber')?.errors?.['required'] && (myProfile.get('phoneNumber')?.touched)">Required</small>
+        <small class="text-danger" *ngIf="myProfile.get('phoneNumber')?.errors?.['pattern'] && (myProfile.get('phoneNumber')?.touched)">A 10 digit phone number must be entered</small>
+        <div *ngIf="!uploadDetails"><button (click)="editDetails()">Edit</button></div>
+        <div *ngIf="uploadDetails"><button (click)="reload()">Cancel</button><span><button [disabled]="!myProfile.valid" (click)="submit()">Save Details</button></span></div>
+    </form>
+</div>

@@ -1,0 +1,91 @@
+<form [formGroup]="OfferRide" class="row">
+    <div [formGroup]="rideDetails" class="col-sm-4 box">
+        <span class="title">
+            Offer a Ride</span>
+            <span (click)="redirect()"><label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+                </label>
+        </span>
+        <div class="caption">we get you the matches asap !</div>
+        <div class="row">
+            <div  class="col-sm-11 rightcard">
+                <div class="inputField"><label for="from">From</label></div>
+                <input type="text" formControlName="from">
+                <small class="text-danger" *ngIf="rideDetails.get('from')?.errors?.['required'] && (rideDetails.get('from')?.touched || submitted)">Required</small>
+                <div class="inputField"><label for="to">To</label></div>
+                <input type="text" formControlName="to">
+                <small class="text-danger" *ngIf="rideDetails.get('to')?.errors?.['required'] && (rideDetails.get('to')?.touched || submitted)">Required</small>
+                <div class="inputField"><label for="date">Date & Time</label></div>
+                <input type="datetime-local"  placeholder="dd/mm/yyyy" formControlName="date">
+                <small class="text-danger" *ngIf="rideDetails.get('date')?.errors?.['required'] && (rideDetails.get('date')?.touched || submitted)">Required</small>
+                <small class="text-danger" *ngIf="rideDetails.get('date')?.errors?.['InvalidDate'] && (rideDetails.get('date')?.touched || submitted)"><br>Please select a valid Date</small>
+                <!-- <div class="inputField"><label for="time">Time</label></div>
+                <input type="time" placeholder="hh:mm" formControlName="time">
+                <small class="text-danger" *ngIf="rideDetails.get('time')?.errors?.['required'] && (rideDetails.get('time')?.touched || submitted)">Required</small> -->
+            </div>
+            <div id="sideBar" class="col-sm-1 leftcard">
+                <li class="startingPoint"></li>
+                <li></li>
+                <li></li>
+                <li class="destinationPoint"><i class='fas fa-map-marker-alt i'></i></li>
+            </div>
+        </div>
+        <div  (click)="addCard()"><button id="nextbutton" [disabled]="!rideDetails.valid">Next >></button></div>
+    </div>
+    <div *ngIf="next" [formGroup]="stopDetails" class="col-sm-4 box">
+        <span class="title">
+            Offer a Ride</span>
+            <span (click)="redirect()"><label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+                </label>
+        </span>
+        <div class="caption">we get you the matches asap !</div>
+        <div class="row">
+            <div  class="col-sm-11 rightcard">
+                <form [formGroup]="pickupStop">
+                <div class="inputField"><label for="stopName">Stop{{stopNumber}}</label></div>
+                <input type="text" formControlName="stopName">
+                <small class="text-danger" *ngIf="pickupStop.get('stopName')?.errors?.['required'] && (pickupStop.get('stopName')?.touched || submitted)">Required</small>
+                <small class="text-danger" *ngIf="pickupStop.get('stopName')?.errors?.['WhiteSpace'] && (pickupStop.get('stopName')?.touched || submitted)">Feild can't be empty</small>
+                <small class="text-danger" *ngIf="pickupStop.get('stopName')?.errors?.['InvalidstopName'] && (pickupStop.get('stopName')?.touched || submitted)"><br>Previous stop Name and Present stop name are similar</small>
+                <div class="inputField"><label for="pickupDate">Date & Time</label></div>
+                <input type="datetime-local" placeholder="dd/mm/yyyy" formControlName="pickupDate">
+                <small class="text-danger" *ngIf="pickupStop.get('pickupDate')?.errors?.['required'] && (pickupStop.get('pickupDate')?.touched || submitted)">Required</small>
+                <small class="text-danger" *ngIf="pickupStop.get('pickupDate')?.errors?.['InvalidStopDate'] && (pickupStop.get('pickupDate')?.touched || submitted)"><br>Date and Time not valid should exceed previous stop</small>
+                <!-- <div class="inputField"><label for="time" formControlName="pickupTime">Time</label></div>
+                <input type="time" placeholder="hh:mm"> -->
+            </form>
+                <div class="row pricebar">
+                    <div class="col-sm-7">
+                        <div class="inputField"><label for="availableSeats">Available Seats</label></div>
+                        <div class="seats"> 
+                            <input type="radio" id="seat1" formControlName="seats" name="seats" value="1" checked>
+                            <label for="seat1">1</label>
+                            <input type="radio" id="seat2" formControlName="seats" name="seats" value="2">
+                            <label for="seat2">2</label>
+                            <input type="radio" id="seat3" formControlName="seats" name="seats" value="3">
+                            <label for="seat3">3</label> 
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="inputField"><label for="price">Price</label></div>
+                        <input type="text" formControlName="price" id="price" placeholder="&#8377;0">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 leftcard">
+                <li class="startingPoint"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="destinationPoint"><i class='fas fa-map-marker-alt i'></i></li>
+                <li id="add"><button id="add" [disabled]="!pickupStop.valid" (click)="addStop()"><i class='fas fa-plus i'></i></button></li>
+            </div>
+        </div>
+        <div id="submit">
+            <button type="submit" [disabled]="!OfferRide.valid" (click)="submit()">Submit</button>
+        </div>
+    </div>
+</form>

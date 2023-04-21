@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row header">
+        <div class="col-sm-6 logo">
+            <img src="../../assets/logo.png" (click)="redirect()" alt="">
+        </div>
+        <div class="col-sm-6 profile">
+            <div (click)="toggle=!toggle"><span id="profileName" ><b>{{userDetails.firstName|titlecase}} {{userDetails.lastName|titlecase}}</b></span><span><img id="profileImage" src="{{userDetails.imageUrl}}" alt=""></span></div>
+        </div>
+        <div class="dropdown" *ngIf="toggle">
+            <li (click)="myProfile()">Profile</li>
+            <li (click)="myRides()">My Rides</li>
+            <li (click)="logout()">Logout</li>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

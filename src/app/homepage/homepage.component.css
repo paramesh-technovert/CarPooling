@@ -1,0 +1,49 @@
+.container{
+    height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/footerImage4.png");
+    background-position: bottom;
+  }
+.row{
+    margin: 0%;
+}
+.header{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.logo{
+    padding-left: 2%;
+}
+.profile{
+    padding-right: 2%;
+    text-align: right;
+}
+#profileName{
+    padding-right: 1%;
+    font-size: 1.5rem;
+}
+#profileImage{
+    border-radius: 50%;
+    width:3rem;
+    height: 3rem;
+}
+.dropdown{
+    position: absolute;
+    left:82%;
+    top:10%;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px 1px #999;
+    display:block;
+    width:10%;
+    padding: 0%;
+    color:#999;
+}
+li{
+    list-style: none;
+    padding: 5% 0%;
+    text-align: center;
+}
+li:hover{
+    background-color: #9318ff;
+}

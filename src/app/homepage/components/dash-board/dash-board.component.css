@@ -1,0 +1,21 @@
+#greeting{
+    font-size: 2rem;
+    padding-left:28% ;
+    padding-top:3%;
+    padding-bottom: 3%;
+}
+a{
+    font-size: 2rem;
+    text-decoration: none;
+    color:#fff;
+    padding: 10%;
+    border-radius: 10px;
+}
+#bookRide{
+    float:right;
+    background-color: #9318ff;
+}
+#offerRide{
+    float: left;
+    background-color:#fead1b;
+}
