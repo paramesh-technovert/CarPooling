@@ -1,13 +1,12 @@
 import { AbstractControl } from '@angular/forms';
-export function DateValidator(){
+export function DateValidator() {
   return (control: AbstractControl): { [key: string]: any } | null => {
-           const inputDate = new Date(control.value);
-            const currentDate = new Date();
-            if (inputDate < currentDate) {
-                //console.log(inputDate.toISOString(),currentDate.toISOString())
-              return { InvalidDate: true };
-            }
-        
-            return null;
-          }
+    const inputDate = (new Date(control.value)).setHours(0, 0, 0, 0);
+    const currentDate = (new Date()).setHours(0, 0, 0, 0);
+    if (inputDate == currentDate) {
+      return { freeze: true };
+    }
+
+    return null;
+  }
 }

@@ -6,54 +6,45 @@ import { Observable } from 'rxjs';
 import { BookRideRequestDTO } from '../modals/BookRideRequest';
 import { BookedRides } from '../modals/BookedRides';
 import { OfferedRides } from '../modals/OfferedRides';
+import { getBookedRides, getMatchedRides, getOfferedRides, postBookedRides } from '../EndPoints/EndPoints';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BookRideService{
+export class BookRideService {
 
-  constructor(private httpClient:HttpClient) { }
-  getMatchedRides(matchedRideRequest:MatchedRidesRequest):Observable<MatchedRidesResponse[]> {
-    return  this.httpClient.post<MatchedRidesResponse[]>(
-      'https://localhost:7103/api/MatchedRides',
+  constructor(private httpClient: HttpClient) { }
+  getMatchedRides(matchedRideRequest: MatchedRidesRequest): Observable<MatchedRidesResponse[]> {
+    return this.httpClient.post<MatchedRidesResponse[]>(
+      getMatchedRides,
       JSON.stringify(matchedRideRequest),
       {
-      headers:new HttpHeaders({
-        'Content-type':'application/json'
+        headers: new HttpHeaders({
+          'Content-type': 'application/json'
+        })
       })
-  })
   }
-  bookRide(bookRideRequest:BookRideRequestDTO){
+  bookRide(bookRideRequest: BookRideRequestDTO) {
     console.log(bookRideRequest);
     return this.httpClient.post(
-      'https://localhost:7103/api/BookRide',
+      postBookedRides,
       JSON.stringify(bookRideRequest),
       {
-        headers:new HttpHeaders({
-          'Content-type':'application/json'
+        headers: new HttpHeaders({
+          'Content-type': 'application/json'
         })
-    })
+      })
   }
-  getBookedRides(id:string):Observable<BookedRides[]>{
+  getBookedRides(id: string): Observable<BookedRides[]> {
     return this.httpClient.get<BookedRides[]>(
-      'https://localhost:7103/api/BookRide',
+      getBookedRides,
       {
-        headers:new HttpHeaders({
-          'Content-type':'application/json',
-          'userId':id
+        headers: new HttpHeaders({
+          'Content-type': 'application/json',
+          'userId': id
         })
       }
     )
   }
-  getOfferedRides(id:string):Observable<OfferedRides[]>{
-    return this.httpClient.get<OfferedRides[]>(
-      'https://localhost:7103/api/OfferRide/OfferedRides',
-      {
-        headers:new HttpHeaders({
-          'Content-type':'application/json',
-          'Id':id
-        })
-      }
-    )
-  }
+
 }

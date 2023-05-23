@@ -1,30 +1,68 @@
 <div class="container">
-    <div class="boldText">Sign Up</div>
-    <hr>
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="boldText">Sign Up</div>
+  <hr />
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div>
-        <input type="text" formControlName="email" required>
-        <label>Enter Email Id</label>
+      <input type="text" formControlName="email" required />
+      <label>Enter Email Id</label>
     </div>
-    <small class="text-danger" *ngIf="signupForm.get('email')?.errors?.['required'] && (signupForm.get('email')?.touched || submitted)">Required</small>
-    <small class="text-danger" *ngIf="signupForm.get('email')?.errors?.['email']">Enter valid Email</small>
+    <small
+      class="text-danger"
+      *ngIf="signupForm.get('email')?.errors?.['required'] && (signupForm.get('email')?.touched)"
+      >Required</small
+    >
+    <small
+      class="text-danger"
+      *ngIf="signupForm.get('email')?.errors?.['email'] && (signupForm.get('email')?.touched)"
+      >Enter valid Email</small
+    >
     <div>
-        <input type="password" formControlName="password" required>
-        <label>Enter Password</label>
+      <input type="password" formControlName="password" required />
+      <label>Enter Password</label>
     </div>
-    <small class="text-danger" *ngIf="signupForm.get('password')?.errors?.['required'] && (signupForm.get('password')?.touched || submitted)">Required</small>
-    <small class="text-danger" *ngIf="signupForm.get('password')?.errors?.['minlength'] || signupForm.get('password')?.errors?.['maxlength']">Password must be 8 to 25 characters</small>
+    <small
+      class="text-danger"
+      *ngIf="signupForm.get('password')?.errors?.['required'] && (signupForm.get('password')?.touched)"
+      >Required</small
+    >
+    <small
+      class="text-danger"
+      *ngIf="(signupForm.get('password')?.errors?.['minlength'] || signupForm.get('password')?.errors?.['maxlength']) && (signupForm.get('password')?.touched)"
+      >Password must be 8 to 25 characters</small
+    >
     <div>
-        <input type="password" formControlName="confirmPassword" required>
-        <label>Confirm Password</label>
+      <input type="password" formControlName="confirmPassword" required />
+      <label>Confirm Password</label>
     </div>
-    <div><small class="text-danger" *ngIf="signupForm.get('confirmPassword')?.errors?.['required'] && (signupForm.get('confirmPassword')?.touched || submitted)">Required</small></div>
-    <small class="text-danger" *ngIf="signupForm.errors?.['passwordMismatch'] &&  (signupForm.get('confirmPassword')?.touched || submitted)">Password and Confirm Password didn't match.</small>
-    <small class="text-danger" *ngIf="errorMessage!=null && !signupForm.get('password')?.errors">{{errorMessage}}</small>
-    <div><button type="submit" value="Submit" [disabled]="!signupForm.valid">Submit</button></div>
-</form>
-    <span>Already a member? </span><a routerLink="/SignIn" id="login"> Log In</a>
-    <div class="footer">
-        <img class="footerImage" src="../assets/footerImage2.png" alt="footerImage">
+    <div>
+      <small
+        class="text-danger"
+        *ngIf="signupForm.get('confirmPassword')?.errors?.['required'] && (signupForm.get('confirmPassword')?.touched)"
+        >Required</small
+      >
     </div>
+    <small
+      class="text-danger"
+      *ngIf="signupForm.errors?.['passwordMismatch'] &&  (signupForm.get('confirmPassword')?.touched)"
+      >Password and Confirm Password didn't match.</small
+    >
+    <small
+      class="text-danger"
+      *ngIf="errorMessage != null && !signupForm.get('password')?.errors"
+      >{{ errorMessage }}</small
+    >
+    <div>
+      <button type="submit" value="Submit" [disabled]="!signupForm.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+  <span>Already a member? </span><a routerLink="/SignIn" id="login"> Log In</a>
+  <div class="footer">
+    <img
+      class="footerImage"
+      src="../assets/footerImage2.png"
+      alt="footerImage"
+    />
+  </div>
 </div>

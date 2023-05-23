@@ -1,0 +1,9 @@
+export const postBookedRides = 'https://localhost:7103/api/BookRide';
+export const getBookedRides = 'https://localhost:7103/api/BookRide';
+export const signUp = 'https://localhost:7103/api/Login/SignUp';
+export const signIn = 'https://localhost:7103/api/Login/SignIn';
+export const getOfferedRides = 'https://localhost:7103/api/OfferRide/OfferedRides';
+export const postOfferedRides = 'https://localhost:7103/api/OfferRide';
+export const getMatchedRides = 'https://localhost:7103/api/MatchedRides';
+export const getUserDetails = 'https://localhost:7103/api/UserDetails';
+export const updateuserDetails = 'https://localhost:7103/api/UserDetails';

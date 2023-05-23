@@ -1,24 +1,53 @@
 <div class="container">
-    <div class="boldText">Log In</div>
-    <hr>
-    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-        <div>
-            <input type="text" formControlName="email" required>
-            <label>Enter Email Id</label>
-        </div>
-        <small class="text-danger" *ngIf="signInForm.get('email')?.errors?.['required'] && (signInForm.get('email')?.touched || submitted)">Required</small>
-        <small class="text-danger" *ngIf="signInForm.get('email')?.errors?.['email']">Enter valid Email</small>
-        <div>
-            <input type="password" formControlName="password" required>
-            <label>Enter Password</label>
-        </div>
-        <small class="text-danger" *ngIf="signInForm.get('password')?.errors?.['required'] && (signInForm.get('password')?.touched || submitted)">Required</small>
-        <small class="text-danger" *ngIf="signInForm.get('password')?.errors?.['minlength'] || signInForm.get('password')?.errors?.['maxlength']">Password must be 8 to 25 characters</small>
-        <small class="text-danger" *ngIf="errorMessage!=null && !signInForm.get('password')?.errors">{{errorMessage}}</small>
-        <div><button type="submit" value="Submit" [disabled]="!signInForm.valid">Submit</button></div>
-    </form>
-    <span>Not a member yet ? </span><a routerLink="/SignUp" id="signup"> SIGN UP</a>
-    <div class="footer">
-        <img class="footerImage" src="../assets/footerImage2.png" alt="footerImage">
+  <div class="boldText">Log In</div>
+  <hr />
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <div>
+      <input type="text" formControlName="email" required />
+      <label>Enter Email Id</label>
     </div>
+    <small
+      class="text-danger"
+      *ngIf="signInForm.get('email')?.errors?.['required'] && (signInForm.get('email')?.touched)"
+      >Required</small
+    >
+    <small
+      class="text-danger"
+      *ngIf="signInForm.get('email')?.errors?.['email']  && (signInForm.get('email')?.touched)"
+      >Enter valid Email</small
+    >
+    <div>
+      <input type="password" formControlName="password" required />
+      <label>Enter Password</label>
+    </div>
+    <small
+      class="text-danger"
+      *ngIf="signInForm.get('password')?.errors?.['required'] && (signInForm.get('password')?.touched)"
+      >Required</small
+    >
+    <small
+      class="text-danger"
+      *ngIf="(signInForm.get('password')?.errors?.['minlength'] || signInForm.get('password')?.errors?.['maxlength']) && (signInForm.get('password')?.touched)"
+      >Password must be 8 to 25 characters</small
+    >
+    <small
+      class="text-danger"
+      *ngIf="errorMessage != null && !signInForm.get('password')?.errors && (signInForm.get('password')?.touched)"
+      >{{ errorMessage }}</small
+    >
+    <div>
+      <button type="submit" value="Submit" [disabled]="!signInForm.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+  <span>Not a member yet ? </span
+  ><a routerLink="/SignUp" id="signup"> SIGN UP</a>
+  <div class="footer">
+    <img
+      class="footerImage"
+      src="../assets/footerImage2.png"
+      alt="footerImage"
+    />
+  </div>
 </div>

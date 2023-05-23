@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LoginpageComponent implements OnInit {
 
-  constructor(private router:Router) { 
-    if(localStorage.getItem('userId')!=null || localStorage.getItem('userId')!=undefined){
+  constructor(private router: Router) {
+    if (localStorage.getItem('userId') != null || localStorage.getItem('userId') != undefined) {
       this.router.navigate(['homepage']);
     }
   }

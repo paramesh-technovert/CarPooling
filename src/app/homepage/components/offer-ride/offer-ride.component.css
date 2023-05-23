@@ -1,159 +1,164 @@
-.box{
-    padding-top: 2%;
-    background-color: #fff;
-    box-shadow: 10px #fead1b;
-    margin-right: 7rem;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px 1px #999;
+.container {
+  padding-top: 1%;
 }
-.title{
+.box {
+  padding-top: 2%;
+  background-color: #fff;
+  box-shadow: 10px #fead1b;
+  margin-right: 7rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 1px #999;
+}
+.title {
   font-size: 2rem;
   letter-spacing: 2px;
   padding-left: 3%;
   font-weight: 500;
 }
 .switch {
-    position: relative;
-    float:right;
-    width: 50px;
-    height: 30px;
-    margin-top: 1%;
-    margin-right: 7%;
-  }
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
+  position: relative;
+  float: right;
+  width: 50px;
+  height: 30px;
+  margin-top: 1%;
+  margin-right: 7%;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-  .slider {
-    text-align: right;
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fead1b;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 5px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #9318ff;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #9318ff;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  .caption{
-    color:#999;
-    padding-bottom: 5%;
-    padding-left: 3%;
-  }
-  label{
-    color:#999;
-    font-weight: 600;
-  }
-  input{
-    width:90%;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid #999;
-  }
-  input:focus{
-    border: none;
-    border-bottom: 2px solid skyblue;
-  }
-  .inputField{
-    padding-top: 5%;
-  }
-.pricebar{
+.slider {
+  text-align: right;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fead1b;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 5px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #9318ff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #9318ff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.caption {
+  color: #999;
+  padding-bottom: 5%;
+  padding-left: 3%;
+}
+label {
+  color: #999;
+  font-weight: 600;
+}
+input {
+  width: 90%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #999;
+}
+input:focus {
+  border: none;
+  border-bottom: 2px solid skyblue;
+}
+.inputField {
+  padding-top: 5%;
+}
+.pricebar {
   padding-top: 2%;
   padding-bottom: 2%;
 }
-  #nextbutton:disabled , button:disabled{
-    cursor: not-allowed;
-    border-color: #999;
-    opacity: 0.5;
-  } 
-
-  #nextbutton{
-    background-color: white;
-    color: #9318ff;
-    font-weight: 800;
-    padding: 10% 10% 10% 0%;
-    float: right;
-  }
-  .leftcard{
-    padding-left: 0%;
-    padding-top:9%
-  }
-  .rightcard{
-    padding-right: 0%;
-  }
-  li{
-    color: #999;
-    font-size: 1.5rem;
-    height: 9%;
-  }
- #sideBar li{
-      font-size: 2rem;
-      height: 10%;
-  }
-.startingPoint{
-  color:#9318ff;
+#nextbutton:disabled,
+button:disabled {
+  cursor: not-allowed;
+  border-color: #999;
+  opacity: 0.5;
 }
-.destinationPoint ,#add{
+
+#nextbutton {
+  background-color: white;
+  color: #9318ff;
+  font-weight: 800;
+  padding: 10% 10% 10% 0%;
+  float: right;
+}
+.leftcard {
+  padding-left: 0%;
+  padding-top: 9%;
+}
+.rightcard {
+  padding-right: 0%;
+}
+li {
+  color: #999;
+  font-size: 1.5rem;
+  height: 9%;
+}
+#sideBar li {
+  font-size: 2rem;
+  height: 10%;
+}
+.startingPoint {
+  color: #9318ff;
+}
+.destinationPoint,
+#add {
   list-style: none;
 }
-.i{
+.i {
   font-size: 20px;
   color: #9318ff;
 }
-button{
+button {
   background-color: #fead1b;
   color: #fff;
   padding: 2% 5%;
-  border-radius: 50PX;
+  border-radius: 50px;
   border: none;
 }
-#submit{
+#submit {
   background-color: #fff;
   color: #9318ff;
   font-weight: 800;
 }
-#add{
+#add {
   margin-left: -1rem;
   background-color: #fff;
 }
-input[type="radio"]{
+input[type="radio"] {
   display: inline;
   width: auto;
   padding: 0%;
@@ -161,23 +166,23 @@ input[type="radio"]{
   position: fixed;
   width: 0;
 }
-.seats label{
+.seats label {
   background-color: #fff;
   padding: 10px 15px;
   font-family: sans-serif, Arial;
   font-size: 10px;
-  color:#999;
+  color: #999;
   border: 2px solid #999;
   border-radius: 50%;
   margin-right: 3%;
   margin-top: 3%;
 }
 input[type="radio"]:checked + label {
-  background-color:#9318ff;
+  background-color: #9318ff;
   border-color: #9318ff;
   color: #fff;
 }
-#price{
+#price {
   border: none;
   font-size: 30px;
   font-weight: 700;

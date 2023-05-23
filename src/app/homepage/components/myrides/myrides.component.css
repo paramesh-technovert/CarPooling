@@ -1,76 +1,75 @@
-
-  .row{
-      margin: 0%;
-  }
-  .offeredrides{
-    background-color: #fead1b;
-    width:30%;
-    text-align: center;
-    padding:2%;
-    margin-bottom: 1%;
-    border-radius: 5px;
-    color:#fff;
-  }
-  .bookedrides{
-    background-color: #9318ff;
-    width:30%;
-    text-align: center;
-    padding:2%;
-    margin-bottom: 1%;
-    border-radius: 5px;
-    color:#fff;
-  }
-  .rides{
-    padding-top: 5%;
-  }
-  .name{
-    font-size: 150%;
-    font-weight: 700;
-    padding-left: 1%;
-  }
-  .userImage{
-    width: 40px;
-    height:40px;
-    border-radius: 50%;
-    float: right;
-  }
-.cardPins{
-    display: inline-flex;
-    margin-top: -4%;
+.row {
+  margin: 0%;
 }
-.cardPin{
-    width:25%;
+.offeredrides {
+  background-color: #fead1b;
+  width: 30%;
+  text-align: center;
+  padding: 2%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+  color: #fff;
 }
-.subTitle{
-    color: #999;
-    font-size: 1rem;
-    font-weight: 500;
+.bookedrides {
+  background-color: #9318ff;
+  width: 30%;
+  text-align: center;
+  padding: 2%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+  color: #fff;
 }
-.card{
-    padding: 1%;
-    margin-bottom: 1%;
-    margin-right: 0.5rem;
-    width: 60%;
+.rides {
+  padding-top: 5%;
 }
-.data{
-    font-size: 1rem;
+.name {
+  font-size: 150%;
+  font-weight: 700;
+  padding-left: 1%;
 }
-li{
+.userImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: right;
+}
+.cardPins {
+  display: inline-flex;
+  margin-top: -4%;
+}
+.cardPin {
+  width: 25%;
+}
+.subTitle {
+  color: #999;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.card {
+  padding: 1%;
+  margin-bottom: 1%;
+  margin-right: 0.5rem;
+  width: 60%;
+}
+.data {
+  font-size: 1rem;
+}
+li {
   color: #999;
   font-size: 2rem;
   height: 9%;
 }
-.startingPoint{
-color:#9318ff;
+.startingPoint {
+  color: #9318ff;
 }
-.destinationPoint{
-list-style: none;
+.destinationPoint {
+  list-style: none;
 }
-.i{
-font-size: 20px;
-color: #9318ff;
+.i {
+  font-size: 20px;
+  color: #9318ff;
 }
-.scrollable{
+.scrollable {
   overflow: scroll;
   height: 60vh;
 }

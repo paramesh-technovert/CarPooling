@@ -1,49 +1,49 @@
-.container{
-    height: 100vh;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-image: url("../../assets/footerImage4.png");
-    background-position: bottom;
-  }
-.row{
-    margin: 0%;
+.container {
+  height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/footerImage4.png");
+  background-position: bottom;
 }
-.header{
-    padding-top: 2%;
-    padding-bottom: 2%;
+.row {
+  margin: 0%;
 }
-.logo{
-    padding-left: 2%;
+.header {
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
-.profile{
-    padding-right: 2%;
-    text-align: right;
+.logo {
+  padding-left: 2%;
 }
-#profileName{
-    padding-right: 1%;
-    font-size: 1.5rem;
+.profile {
+  padding-right: 2%;
+  text-align: right;
 }
-#profileImage{
-    border-radius: 50%;
-    width:3rem;
-    height: 3rem;
+#profileName {
+  padding-right: 1%;
+  font-size: 1.5rem;
 }
-.dropdown{
-    position: absolute;
-    left:82%;
-    top:10%;
-    background-color: #fff;
-    box-shadow: 1px 1px 5px 1px #999;
-    display:block;
-    width:10%;
-    padding: 0%;
-    color:#999;
+#profileImage {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
 }
-li{
-    list-style: none;
-    padding: 5% 0%;
-    text-align: center;
+.dropdown {
+  position: absolute;
+  left: 82%;
+  top: 10%;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 1px #999;
+  display: block;
+  width: 10%;
+  padding: 0%;
+  color: #999;
 }
-li:hover{
-    background-color: #9318ff;
+li {
+  list-style: none;
+  padding: 5% 0%;
+  text-align: center;
+}
+li:hover {
+  background-color: #9318ff;
 }

@@ -1,9 +1,8 @@
 import { AbstractControl } from "@angular/forms"
-
-export function NameValidator(){
+export function NameValidator() {
     return (control: AbstractControl): { [key: string]: any } | null => {
-        if(control.value.trim()==0){
-            return {WhiteSpace:true}
+        if (control.value.trim() == 0) {
+            return { WhiteSpace: true }
         }
         return null;
     }

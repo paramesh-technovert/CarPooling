@@ -9,10 +9,12 @@ import { OfferRideComponent } from './homepage/components/offer-ride/offer-ride.
 import { BookrideComponent } from './homepage/components/bookride/bookride.component';
 import { MyridesComponent } from './homepage/components/myrides/myrides.component';
 import { MyProfileComponent } from './homepage/components/my-profile/my-profile.component';
-const routes: Routes = [ 
-  {path:'',component:LoginpageComponent,children:[  {path:"SignIn",component:SignInComponent},
-  {path:"SignUp",component:SignUpComponent},{path:'',redirectTo:'SignIn', pathMatch: 'full'}]},
-  {path:"homepage", component:HomepageComponent , children:[{path:"dashboard",component:DashBoardComponent},{path:"offerRide",component:OfferRideComponent},{path:"bookRide",component:BookrideComponent},{path:"myRides",component:MyridesComponent},{path:"myProfile",component:MyProfileComponent},{path:'',redirectTo:'dashboard', pathMatch: 'full'}]}
+const routes: Routes = [
+  {
+    path: '', component: LoginpageComponent, children: [{ path: "SignIn", component: SignInComponent },
+    { path: "SignUp", component: SignUpComponent }, { path: '', redirectTo: 'SignIn', pathMatch: 'full' }]
+  },
+  { path: "homepage", component: HomepageComponent, children: [{ path: "dashboard", component: DashBoardComponent }, { path: "offerRide", component: OfferRideComponent }, { path: "bookRide", component: BookrideComponent }, { path: "myRides", component: MyridesComponent }, { path: "myProfile", component: MyProfileComponent }, { path: '', redirectTo: 'dashboard', pathMatch: 'full' }] }
 ];
 
 @NgModule({

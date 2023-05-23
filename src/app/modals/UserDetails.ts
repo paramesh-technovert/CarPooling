@@ -1,13 +1,13 @@
 import { Guid } from "guid-typescript";
 
-export class UserDetails{
-    id!:Guid
+export class UserDetails {
+    id!: Guid
 
-    firstName!:string
+    firstName!: string
 
-    lastName!:string
+    lastName!: string
 
-    phoneNumber!:number
+    phoneNumber!: number
 
-    imageUrl!:string
+    imageUrl!: string
 }
