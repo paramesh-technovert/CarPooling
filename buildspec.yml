@@ -9,7 +9,7 @@ phases:
       - npm install  # Install Angular CLI and project dependencies
   build:
     commands:
-      - npm run build -- --prod  # Build the Angular project for production
+      - npm run build --prod  # Build the Angular project for production
   post_build:
     commands:
       - ls -la dist/  # List files in the dist directory to verify build output
