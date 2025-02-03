@@ -10,9 +10,6 @@ phases:
   build:
     commands:
       - npm run build --prod  # Build the Angular project for production
-  post_build:
-    commands:
-      - ls -la dist/  # List files in the dist directory to verify build output
 artifacts:
   files:
     - dist/**/*  # Upload the contents of the dist folder as the build artifacts
