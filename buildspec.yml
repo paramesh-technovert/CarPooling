@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16  # Specify the Node.js version (use your preferred version here)
+    commands:
+      - echo Installing dependencies...
+      - npm install  # Install Angular CLI and project dependencies
+  pre_build:
+    commands:
+      - echo Pre-build phase: Running tests (optional)...
+      - npm run lint  # Run linting (optional step)
+      - npm run test -- --watch=false --browsers=ChromeHeadless  # Run unit tests in headless Chrome (optional)
+  build:
+    commands:
+      - echo Build phase: Building Angular project...
+      - npm run build -- --prod  # Build the Angular project for production
+  post_build:
+    commands:
+      - echo Post-build phase: Preparing output...
+      - ls -la dist/  # List files in the dist directory to verify build output
+artifacts:
+  files:
+    - dist/**/*  # Upload the contents of the dist folder as the build artifacts
