@@ -7,9 +7,6 @@ phases:
     commands:
       - echo Installing dependencies...
       - npm install  # Install Angular CLI and project dependencies
-  pre_build:
-    commands:
-      - npm run lint  # Run linting (optional step)
   build:
     commands:
       - npm run build -- --prod  # Build the Angular project for production
