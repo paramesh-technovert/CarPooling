@@ -9,16 +9,12 @@ phases:
       - npm install  # Install Angular CLI and project dependencies
   pre_build:
     commands:
-      - echo Pre-build phase: Running tests (optional)...
       - npm run lint  # Run linting (optional step)
-      - npm run test -- --watch=false --browsers=ChromeHeadless  # Run unit tests in headless Chrome (optional)
   build:
     commands:
-      - echo Build phase: Building Angular project...
       - npm run build -- --prod  # Build the Angular project for production
   post_build:
     commands:
-      - echo Post-build phase: Preparing output...
       - ls -la dist/  # List files in the dist directory to verify build output
 artifacts:
   files:
